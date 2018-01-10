@@ -1,23 +1,13 @@
 import { Component } from '@angular/core';
-import { trigger, transition, animate, style, state } from '@angular/animations';
+import { fade, slide } from '../animations';
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css'],
   animations: [
-    trigger('fade',[
-      state('void', style({ opacity:0 })),
-      // transition(':enter, :leave',[
-      //   animate(2000)
-      // ]),
-      transition('void <=> *',[
-        animate(2000)
-      ]),
-      // transition('* => void',[
-      //   animate(500)
-      // ])
-    ])
+    fade,
+    slide
   ]
 })
 export class TodoComponent {
